@@ -1,0 +1,28 @@
+.bringer-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+.custom-swiper-pagination {
+  margin-top: 20px; /* space between cards and dots */
+  margin-bottom: 40px; /* 👈 add space before the button */
+  text-align: center;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  background: #999;
+  opacity: 0.7;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px; /* space between bullets */
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background: #000;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .custom-swiper-pagination {
+    margin-top: 12px;
+  }
+}
