@@ -1,0 +1,86 @@
+/* Mobile Menu Override for React */
+@media (max-width: 1024px) {
+  /* Show mobile menu when class is added */
+  body.bringer-mobile-menu-open .bringer-header-inner {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.98);
+    z-index: 9999;
+    overflow-y: auto;
+    padding: 100px 30px 30px;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  body.bringer-mobile-menu-open .bringer-header-mp {
+    display: block !important;
+  }
+
+  body.bringer-mobile-menu-open .main-menu {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  body.bringer-mobile-menu-open .main-menu > li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  body.bringer-mobile-menu-open .main-menu > li > a {
+    display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  body.bringer-mobile-menu-open .sub-menu {
+    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  body.bringer-mobile-menu-open .menu-item-has-children.is-active > .sub-menu {
+    max-height: 1000px;
+    display: block !important;
+  }
+
+  body.bringer-mobile-menu-open .sub-menu li a {
+    padding: 12px 0;
+    display: block;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  body.bringer-mobile-menu-open .bringer-header-rp {
+    display: block;
+    margin-top: 30px;
+  }
+
+  /* Hide desktop menu on mobile */
+  .bringer-header-inner {
+    display: none;
+  }
+
+  .bringer-mobile-header-inner {
+    display: flex !important;
+  }
+}
+
+/* Desktop - show normal header */
+@media (min-width: 1025px) {
+  .bringer-mobile-header-inner {
+    display: none !important;
+  }
+
+  .bringer-header-inner {
+    display: flex !important;
+  }
+}
