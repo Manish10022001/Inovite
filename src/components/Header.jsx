@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+export default function Header() {
   return (
     <header
       id="bringer-header"
@@ -300,4 +300,3 @@ const Header = () => {
   );
 };
 
-export default Header;
