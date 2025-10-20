@@ -1,7 +1,7 @@
 import react from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../components/Header";
+
 import HeroSection from "../components/Home/HeroSection";
 import ServiceList from "../components/Home/ServiceList";
 import PortfolioCarousel from "../components/Home/PortfolioCarousel";
@@ -66,7 +66,6 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Header />
       <main id="bringer-main">
         <div className="stg-container">
           {/* Hero Section */}

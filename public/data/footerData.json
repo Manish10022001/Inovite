@@ -1,0 +1,46 @@
+{
+  "company": {
+    "name": "Inovite Services Pvt. Ltd.",
+    "logo": "/img/logo.png",
+    "description": "We are a passionate team of developers and designers who believe in the power of creativity. We help creative people create a strong online presence that shows their work and tells a story.",
+    "socials": [
+      { "platform": "facebook", "url": "https://facebook.com/inovite" },
+      { "platform": "instagram", "url": "https://instagram.com/inovite" },
+      { "platform": "x", "url": "https://x.com/inovite" },
+      { "platform": "tiktok", "url": "https://tiktok.com/@inovite" },
+      { "platform": "patreon", "url": "https://patreon.com/inovite" }
+    ]
+  },
+  "widgets": [
+    {
+      "title": "Services",
+      "links": [
+        { "name": "Branding", "url": "/services/branding" },
+        { "name": "Marketing", "url": "/services/marketing" },
+        { "name": "Graphic Design", "url": "/services/graphic-design" },
+        { "name": "Web Design", "url": "/services/web-design" },
+        { "name": "Content Creation", "url": "/services/content" }
+      ]
+    },
+    {
+      "title": "About Us",
+      "links": [
+        { "name": "About Us", "url": "/about" },
+        { "name": "About Me", "url": "/about/me" },
+        { "name": "Our Team", "url": "/about/team" },
+        { "name": "Testimonials", "url": "/testimonials" },
+        { "name": "Get in Touch", "url": "/contact" }
+      ]
+    },
+    {
+      "title": "Resources",
+      "links": [
+        { "name": "Pricing", "url": "/pricing" },
+        { "name": "Help Center", "url": "/help" },
+        { "name": "Our Services", "url": "/services" },
+        { "name": "Terms of Use", "url": "/terms" },
+        { "name": "Privacy Policy", "url": "/privacy" }
+      ]
+    }
+  ]
+}
