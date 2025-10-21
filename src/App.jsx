@@ -4,6 +4,7 @@ import Home from "./pages/home.jsx";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Blogs from "./components/Blogs";
+import Contact from "./pages/contact.jsx";
 // import Contact from "./pages/contact.jsx";
 // import About from "./pages/about-us";
 import "./styles/config.css";
@@ -22,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/contact" element={<Contact />} />
           {/* <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} /> */}
         </Routes>
