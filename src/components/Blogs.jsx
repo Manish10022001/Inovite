@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
+
 export default function Blogs() {
+  const { t } = useTranslation();
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -18,7 +21,7 @@ export default function Blogs() {
         <div className="stg-row stg-bottom-gap-l">
           <div className="stg-col-7">
             <h2 data-split-appear="fade-up" data-unload="fade-up">
-              Here’s how we turn thoughts into thriving trends:
+              {t("blogs.title")}
             </h2>
           </div>
           <div className="stg-col-5"></div>
@@ -66,7 +69,7 @@ export default function Blogs() {
           ))
         ) : (
           <p style={{ textAlign: "center", padding: "2rem" }}>
-            No blogs found. Be the first to post something epic! 🚀
+            {t("blogs.noBlogsFound")}
           </p>
         )}
       </section>
