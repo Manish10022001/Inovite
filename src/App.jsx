@@ -15,7 +15,7 @@ import "./styles/responsive.css";
 import "./styles/PortfolioCarousel.css";
 // import "./styles/header.css";
 import "./styles/stg.css"; // Added grid system styles
-
+import "./styles/langSwitcher.css";
 const App = () => {
   return (
     <Router>
