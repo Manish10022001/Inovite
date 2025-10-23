@@ -163,5 +163,40 @@
     "loading": "Loading...",
     "submit": "Submit",
     "cancel": "Cancel"
+  },
+  "internship": {
+    "title": "Internship Application",
+    "subtitle": "Fill out the form below to apply for an internship.",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "college": "College Name",
+      "collegePlaceholder": "Enter your college name",
+      "year": "Graduation Year",
+      "yearPlaceholder": "Enter your graduation year",
+      "course": "Course Name",
+      "coursePlaceholder": "Enter your course name",
+      "resume": "Resume Link",
+      "resumePlaceholder": "Enter a valid URL to your resume",
+      "skills": "Skills",
+      "skillsPlaceholder": "List your skills (comma separated)",
+      "submit": "Submit Application",
+      "successMessage": "Your internship application was submitted successfully!",
+      "validation": {
+        "nameRequired": "Name is required",
+        "emailInvalid": "Please enter a valid email address",
+        "emailRequired": "Email is required",
+        "collegeRequired": "College name is required",
+        "yearRequired": "Year is required",
+        "yearMin": "Year must be at least 2022",
+        "yearMax": "Year cannot be greater than 2100",
+        "courseRequired": "Course name is required",
+        "resumeInvalid": "Please enter a valid resume URL",
+        "resumeRequired": "Resume link is required",
+        "skillsRequired": "Please list your skills"
+      }
+    }
   }
 }
