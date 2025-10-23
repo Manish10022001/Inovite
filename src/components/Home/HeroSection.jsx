@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 
 export default function HeroSection() {
+  const { t } = useTranslation();
   const [tags, setTags] = useState([]);
 
   useEffect(() => {
@@ -13,9 +15,8 @@ export default function HeroSection() {
   return (
     <section className="backlight-bottom">
       <div className="bringer-hero-block bringer-hero-type03">
-        {/* Main row */}
+        {/* Hero Title */}
         <div className="bringer-hero-title-wrap">
-          {/* Title */}
           <h1
             className="bringer-page-title"
             data-split-appear="fade-up"
@@ -23,15 +24,15 @@ export default function HeroSection() {
             data-split-by="line"
             data-split-unload="fade-up"
           >
-            Bring your creative ideas into reality!
+            {t("home.hero.title")}
           </h1>
-          {/* Additional Media */}
+
+          {/* 3D Robot */}
           <div
             className="stg-m-hide"
             data-appear="fade-left"
             data-unload="fade-right"
           >
-            {/* Model Viewer */}
             <div
               className="stg-m-hide robot-3d-wrap"
               data-appear="fade-left"
@@ -44,29 +45,26 @@ export default function HeroSection() {
                 camera-controls
               ></model-viewer>
             </div>
-
             <style>{`
-                .robot-3d-wrap {
-                  display: flex;
-                  justify-content: flex-start;
-                  margin-left: -40px;
-                  margin-bottom: -40px;
-                  width: 400px;
-                  height: 250px;
-                  overflow: hidden;
-                }
-
-                .robot-3d-wrap model-viewer {
-                  width: 400px;
-                  height: 250px;
-                }
-              `}</style>
+              .robot-3d-wrap {
+                display: flex;
+                justify-content: flex-start;
+                margin-left: -40px;
+                margin-bottom: -40px;
+                width: 400px;
+                height: 250px;
+                overflow: hidden;
+              }
+              .robot-3d-wrap model-viewer {
+                width: 400px;
+                height: 250px;
+              }
+            `}</style>
           </div>
         </div>
 
-        {/* Masked Media Container */}
+        {/* Hero Media */}
         <div className="bringer-hero-media-wrap bringer-masked-block">
-          {/* Masked Media */}
           <div
             className="bringer-hero-media bringer-masked-media"
             data-appear="fade-right"
@@ -84,7 +82,7 @@ export default function HeroSection() {
             />
           </div>
 
-          {/* Content */}
+          {/* Hero Description */}
           <div className="bringer-hero-media-content bringer-masked-content at-top-right">
             <div
               className="bringer-hero-media-content-inner m-align-center"
@@ -93,12 +91,11 @@ export default function HeroSection() {
               data-delay="100"
               data-threshold="0"
             >
-              We help creative agencies, designers, and other creative people
-              showcase their work and connect with clients.
+              {t("home.hero.description")}
             </div>
           </div>
 
-          {/* Tags List */}
+          {/* Tags List - Note: These come from JSON, so they won't be translated */}
           <ul
             className="bringer-tags-list"
             data-unload="fade-left"

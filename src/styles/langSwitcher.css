@@ -1,0 +1,39 @@
+.bringer-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between switcher and button */
+}
+
+/* Optional: make the language buttons look better inline */
+.bringer-language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.bringer-lang-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333; /* Default color */
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.bringer-lang-btn:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.bringer-lang-btn.active {
+  color: #0056b3; /* Darker blue for active */
+  font-weight: 700; /* Bold text for emphasis */
+  cursor: default; /* Indicate non-clickable */
+  text-decoration: underline; /* Optional: underline active */
+}
+
+.bringer-lang-separator {
+  margin: 0 4px;
+  color: #999;
+  user-select: none;
+}
