@@ -1,11 +1,16 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-
+import "../styles/langSwitcher.css";
 export default function Header() {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+  };
+
+  // Function to toggle language based on switch state
+  const toggleLanguage = (e) => {
+    changeLanguage(e.target.checked ? "hi" : "en");
   };
 
   return (
@@ -286,29 +291,35 @@ export default function Header() {
           </nav>
         </div>
         {/* Header Button and Language Switcher */}
+        <div className="bringer-header-mp">
+          <nav className="bringer-nav">
+            <ul
+              className="main-menu"
+              data-stagger-appear="fade-down"
+              data-stagger-delay="75"
+            ></ul>
+          </nav>
+        </div>
+        {/* Header Button and Language Switcher */}
         <div className="bringer-header-rp">
-          <div className="bringer-header-actions">
-            {/* Language Switcher */}
-            <div className="bringer-language-switcher">
-              <button
-                onClick={() => changeLanguage("en")}
-                className={`bringer-lang-btn ${
-                  i18n.language === "en" ? "active" : ""
-                }`}
-                aria-label="Switch to English"
-              >
-                EN
-              </button>
-              <span className="bringer-lang-separator">|</span>
-              <button
-                onClick={() => changeLanguage("hi")}
-                className={`bringer-lang-btn ${
-                  i18n.language === "hi" ? "active" : ""
-                }`}
-                aria-label="Switch to Hindi"
-              >
-                हिं
-              </button>
+          <div
+            className="bringer-header-actions"
+            style={{ display: "flex", alignItems: "center", gap: "15px" }}
+          >
+            {/* Language Switcher Toggle */}
+
+            <div className="bringer-language-switch">
+              <label className="lang-switch">
+                <span className="lang-label">EN</span>
+                <input
+                  type="checkbox"
+                  checked={i18n.language === "hi"}
+                  onChange={toggleLanguage}
+                  aria-label="Toggle language switch"
+                />
+                <span className="slider"></span>
+                <span className="lang-label">हि</span>
+              </label>
             </div>
 
             {/* CTA Button */}
@@ -324,24 +335,19 @@ export default function Header() {
           <img src="/img/logo.png" alt="bringer." width="88" height="24" />
         </a>
 
-        {/* Mobile Language Switcher */}
-        <div className="bringer-mobile-language-switcher">
-          <button
-            onClick={() => changeLanguage("en")}
-            className={`bringer-lang-btn ${
-              i18n.language === "en" ? "active" : ""
-            }`}
-          >
-            EN
-          </button>
-          <button
-            onClick={() => changeLanguage("hi")}
-            className={`bringer-lang-btn ${
-              i18n.language === "hi" ? "active" : ""
-            }`}
-          >
-            हिं
-          </button>
+        {/* Mobile Language Switcher Toggle */}
+        <div className="bringer-mobile-language-switch">
+          <label className="lang-switch">
+            <span className="lang-label">EN</span>
+            <input
+              type="checkbox"
+              checked={i18n.language === "hi"}
+              onChange={toggleLanguage}
+              aria-label="Toggle language switch"
+            />
+            <span className="slider"></span>
+            <span className="lang-label">हि</span>
+          </label>
         </div>
 
         <a href="#" className="bringer-mobile-menu-toggler">

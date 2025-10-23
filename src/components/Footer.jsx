@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const [footerData, setFooterData] = useState(null);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ export default function Footer() {
                 <div className="bringer-info-description">
                   {company.description}
                 </div>
-                <span className="bringer-label">Follow us:</span>
+                <span className="bringer-label">{t("footer.followUs")}</span>
                 <ul
                   className="bringer-socials-list"
                   data-stagger-appear="fade-up"
@@ -96,22 +98,10 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="bringer-footer-line stg-container">
-        <div className="align-center">© 2025 {company.name}</div>
-      </div>
-
-      {/* Right Click Protection */}
-      {/* <div className="bringer-rcp-wrap">
-        <div className="bringer-rcp-overlay"></div>
-        <div className="bringer-rcp-container">
-          <h2>
-            ⚡ Sorry, shortcuts aren’t our style. Keep exploring the Inovite
-            way! 🌐
-          </h2>
+        <div className="align-center">
+          {t("footer.copyright", { year: 2025, company: company.name })}
         </div>
-      </div> */}
-
-      {/* Dynamic Backlight */}
-      {/* <div className="bringer-backlight"></div> */}
+      </div>
     </footer>
   );
 }

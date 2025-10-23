@@ -1,39 +1,101 @@
-.bringer-header-actions {
-  display: flex;
+.lang-switch {
+  position: relative;
+  display: inline-flex;
   align-items: center;
-  gap: 1rem; /* space between switcher and button */
-}
-
-/* Optional: make the language buttons look better inline */
-.bringer-language-switcher {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.bringer-lang-btn {
-  background: transparent;
-  border: none;
   cursor: pointer;
-  font-weight: 600;
-  color: #333; /* Default color */
-  padding: 0.25rem 0.5rem;
-  transition: color 0.2s ease;
-}
-
-.bringer-lang-btn:hover {
-  color: #0056b3; /* Darker blue on hover */
-}
-
-.bringer-lang-btn.active {
-  color: #0056b3; /* Darker blue for active */
-  font-weight: 700; /* Bold text for emphasis */
-  cursor: default; /* Indicate non-clickable */
-  text-decoration: underline; /* Optional: underline active */
-}
-
-.bringer-lang-separator {
-  margin: 0 4px;
-  color: #999;
   user-select: none;
+  gap: 10px;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.lang-switch input {
+  opacity: 0;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  z-index: 3;
+}
+
+.lang-switch .slider {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.lang-switch .slider::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 2px;
+  top: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.lang-switch input:checked + .slider {
+  background-color: #4caf50;
+}
+
+.lang-switch input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.lang-label {
+  user-select: none;
+  font-size: 14px;
+  min-width: 25px;
+  text-align: center;
+  color: #666;
+  line-height: 1;
+  display: inline-block;
+}
+
+.lang-switch input:checked ~ .lang-label:last-child {
+  color: #4caf50;
+  font-weight: 700;
+}
+
+.lang-switch input:not(:checked) ~ .lang-label:first-child {
+  color: #4caf50;
+  font-weight: 700;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .lang-switch {
+    gap: 6px;
+  }
+  .lang-label {
+    font-size: 12px;
+    min-width: 16px;
+  }
+  .lang-switch .slider {
+    width: 40px;
+    height: 20px;
+  }
+  .lang-switch .slider::before {
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 2px;
+  }
+  .lang-switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+  .lang-switch input {
+    width: 34px;
+    height: 20px;
+  }
 }
