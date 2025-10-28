@@ -65,7 +65,7 @@ export default function Home() {
 
   return (
     <>
-      <main id="bringer-main">
+      <main >
         <div className="stg-container">
           {/* Hero Section */}
           <HeroSection />

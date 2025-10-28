@@ -4,13 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
+import "../../styles/PortfolioCarousel.css";
 export default function PortfolioCarousel({ portfolioItems }) {
   return (
     <div className="bringer-carousel-wrapper">
       <Swiper
         slidesPerView={5}
-        spaceBetween={30}
+        spaceBetween={10}
         pagination={{
           clickable: true,
           el: ".custom-swiper-pagination",
@@ -26,8 +26,8 @@ export default function PortfolioCarousel({ portfolioItems }) {
                 <img
                   src={item.image}
                   alt={item.title}
-                  width="1200"
-                  height="1200"
+                  width="200"
+                  height="200"
                   className="bringer-lazy"
                 />
               </div>
