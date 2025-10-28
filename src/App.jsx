@@ -12,7 +12,7 @@ import "./styles/config.css";
 import "./styles/libs.css";
 import "./styles/style.css";
 import "./styles/responsive.css";
-import "./styles/PortfolioCarousel.css";
+// import "./styles/PortfolioCarousel.css";
 // import "./styles/header.css";
 import "./styles/stg.css"; // Added grid system styles
 
