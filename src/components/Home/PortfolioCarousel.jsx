@@ -10,7 +10,7 @@ export default function PortfolioCarousel({ portfolioItems }) {
     <div className="bringer-carousel-wrapper">
       <Swiper
         slidesPerView={5}
-        spaceBetween={10}
+        spaceBetween={30}
         pagination={{
           clickable: true,
           el: ".custom-swiper-pagination",
@@ -26,8 +26,8 @@ export default function PortfolioCarousel({ portfolioItems }) {
                 <img
                   src={item.image}
                   alt={item.title}
-                  width="200"
-                  height="200"
+                  width="1200"
+                  height="1200"
                   className="bringer-lazy"
                 />
               </div>

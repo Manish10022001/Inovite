@@ -164,6 +164,11 @@
     "submit": "Submit",
     "cancel": "Cancel"
   },
+  "footer": {
+    "followUs": "Follow us:",
+    "copyright": "© {{year}} {{company}}"
+  },
+
   "internship": {
     "title": "Internship Application",
     "subtitle": "Fill out the form below to apply for an internship.",
