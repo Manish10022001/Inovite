@@ -84,7 +84,10 @@ export default function Footer() {
                     <ul>
                       {widget.links.map((link, i) => (
                         <li key={i}>
-                          <NavLink to={link.url}>
+                          {/* <NavLink to={link.url}>
+                            {t(`footer.widgets.${widget.id}.links.${link.key}`)}
+                          </NavLink> */}
+                          <NavLink>
                             {t(`footer.widgets.${widget.id}.links.${link.key}`)}
                           </NavLink>
                         </li>
