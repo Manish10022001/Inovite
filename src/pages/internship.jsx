@@ -36,12 +36,13 @@ export default function Internship() {
   });
 
   return (
+    
     <div className="stg-container">
       <section className="backlight-bottom">
         {/* Section Title */}
         <div className="stg-row bringer-section-title">
           <div className="stg-col-8 stg-offset-2">
-            <div className="align-center">
+            <div className="align-center"><br /><br />
               <h2 data-appear="fade-up" data-unload="fade-up">
                 Apply for Internship
               </h2>
