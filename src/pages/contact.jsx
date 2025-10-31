@@ -1,8 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import ContactForm from "../components/Contact/ContactForm";
 import ContactCard from "../components/Contact/ContactCard";
 import ContactAboutUsSection from "../components/Contact/ContactAboutUsSection";
+
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <div className="stg-container">
       {/* Section: */}
@@ -28,7 +32,7 @@ export default function Contact() {
                 data-split-delay="100"
                 data-split-by="line"
               >
-                Let's discuss your next creative project.
+                {t("contact.ctaSection.title")}
               </div>
               <div className="bringer-cta-text">
                 <div className="stg-row stg-valign-middle">
@@ -43,8 +47,7 @@ export default function Contact() {
                     data-appear="fade-left"
                   >
                     <p className="bringer-large-text">
-                      We help creative agencies, designers, and other creative
-                      people showcase their perfect work.
+                      {t("contact.ctaSection.description")}
                     </p>
                   </div>
                 </div>
@@ -58,26 +61,42 @@ export default function Contact() {
                   className="bringer-counter bringer-small-counter"
                   data-delay="3000"
                 >
-                  <div className="bringer-counter-number">420</div>
-                  <div className="bringer-counter-label">Projects Done</div>
+                  <div className="bringer-counter-number">
+                    {t("contact.ctaSection.counters.projects.number")}
+                  </div>
+                  <div className="bringer-counter-label">
+                    {t("contact.ctaSection.counters.projects.label")}
+                  </div>
                 </div>
                 <div
                   className="bringer-counter bringer-small-counter"
                   data-delay="3000"
                 >
-                  <div className="bringer-counter-number" data-suffix="K+">
-                    8
+                  <div
+                    className="bringer-counter-number"
+                    data-suffix={t(
+                      "contact.ctaSection.counters.clients.suffix"
+                    )}
+                  >
+                    {t("contact.ctaSection.counters.clients.number")}
                   </div>
-                  <div className="bringer-counter-label">Happy Clients</div>
+                  <div className="bringer-counter-label">
+                    {t("contact.ctaSection.counters.clients.label")}
+                  </div>
                 </div>
                 <div
                   className="bringer-counter bringer-small-counter"
                   data-delay="3000"
                 >
-                  <div className="bringer-counter-number" data-suffix="+">
-                    12
+                  <div
+                    className="bringer-counter-number"
+                    data-suffix={t("contact.ctaSection.counters.years.suffix")}
+                  >
+                    {t("contact.ctaSection.counters.years.number")}
                   </div>
-                  <div className="bringer-counter-label">Years in Work</div>
+                  <div className="bringer-counter-label">
+                    {t("contact.ctaSection.counters.years.label")}
+                  </div>
                 </div>
               </div>
             </div>
@@ -91,15 +110,15 @@ export default function Contact() {
           <div className="stg-col-8 stg-offset-2">
             <div className="align-center">
               <h2 data-appear="fade-up" data-unload="fade-up">
-                Let's 🗣 talk!
+                {t("contact.letsTalk.title")}
               </h2>
               <p
-                className="bringer-large-text"
+                className="bringer-large-text mb-5"
                 data-appear="fade-up"
                 data-delay="100"
                 data-unload="fade-up"
               >
-                Here's how you can connect with the Bringer team:
+                {t("contact.letsTalk.subtitle")}
               </p>
             </div>
           </div>
@@ -112,25 +131,26 @@ export default function Contact() {
         >
           <div className="stg-col-4 stg-tp-col-6 stg-tp-bottom-gap">
             <ContactCard
-              href="tel:+12345556789"
-              title="Phone"
-              subtitle="+1 (234) 555-67-89"
-              description="Give us a call and chat directly with our friendly team. We're always happy to answer any questions."
+              href="tel:+917447706777"
+              title={t("contact.letsTalk.phone.title")}
+              subtitle={t("contact.letsTalk.phone.subtitle")}
+              description={t("contact.letsTalk.phone.description")}
             />
           </div>
           <div className="stg-col-4 stg-tp-col-6 stg-tp-bottom-gap">
             <ContactCard
-              href="mailto:bringer@example.com"
-              title="Email"
-              subtitle="bringer@example.com"
-              description="Send us a detailed message. We'll get back to you as soon as possible to discuss your creative project further."
+              href="mailto:connect@inovite.in"
+              title={t("contact.letsTalk.email.title")}
+              subtitle={t("contact.letsTalk.email.subtitle")}
+              description={t("contact.letsTalk.email.description")}
             />
           </div>
           <div className="stg-col-4 stg-tp-col-12">
             <div className="bringer-block stg-aspect-square stg-tp-aspect-rectangle stg-vertical-space-between">
               <div>
                 <h5>
-                  Social Media<span className="bringer-accent">.</span>
+                  {t("contact.letsTalk.social.title")}
+                  <span className="bringer-accent">.</span>
                 </h5>
                 <ul
                   className="bringer-socials-list stg-small-gap"
@@ -153,10 +173,7 @@ export default function Contact() {
                   )}
                 </ul>
               </div>
-              <p>
-                Follow us on Social Media Platforms for a glimpse into our
-                creative world, industry insights, and projects.
-              </p>
+              <p>{t("contact.letsTalk.social.description")}</p>
             </div>
           </div>
         </div>
@@ -168,17 +185,15 @@ export default function Contact() {
           <div className="stg-col-8 stg-offset-2">
             <div className="align-center">
               <h2 data-appear="fade-up" data-unload="fade-up">
-                Visit our Studio
+                {t("contact.visitStudio.title")}
               </h2>
               <p
-                className="bringer-large-text"
+                className="bringer-large-text mb-5"
                 data-appear="fade-up"
                 data-delay="100"
                 data-unload="fade-up"
               >
-                Come visit! We love welcoming potential collaborators into our
-                vibrant space. Schedule a tour and get inspired by our creative
-                energy.
+                {t("contact.visitStudio.subtitle")}
               </p>
             </div>
           </div>
@@ -191,10 +206,10 @@ export default function Contact() {
             data-unload="fade-left"
           >
             <ContactCard
-              href="https://maps.app.goo.gl/WbTG6EKuF9dE1Xuy8"
-              title="Address"
-              subtitle="1250 Welton St, Denver,<br />CO 80204"
-              description="Drop by our vibrant studio. We'd love to welcome you and share our creative vibe. Let's fuel your vision!"
+              href="https://maps.app.goo.gl/EpM2HZD1UehvVXK97"
+              title={t("contact.visitStudio.address.title")}
+              subtitle={t("contact.visitStudio.address.subtitle")}
+              description={t("contact.visitStudio.address.description")}
             />
           </div>
           <div
@@ -205,7 +220,7 @@ export default function Contact() {
           >
             <iframe
               className="bringer-google-map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.943072055294!2d-104.99509669999999!3d39.7409296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c78d2480272f1%3A0x1b2acd6e38844602!2s1250%20Welton%20St%2C%20Denver%2C%20CO%2080204%2C%20USA!5e0!3m2!1sen!2sua!4v1705074190340!5m2!1sen!2sua"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.506435887123!2d73.77005707357726!3d18.596277582512023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b90016bd11e3%3A0x9690930d7c0dfd9a!2sSonigara%20Landmark!5e0!3m2!1sen!2sin!4v1761928247393!5m2!1sen!2sin"
               width="790"
               height="379"
               style={{ border: 0 }}

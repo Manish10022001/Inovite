@@ -165,8 +165,43 @@
     "cancel": "Cancel"
   },
   "footer": {
-    "followUs": "Follow us:",
-    "copyright": "© {{year}} {{company}}"
+    "company": {
+      "description": "We are a passionate team of developers and designers who believe in the power of creativity. We help creative people create a strong online presence that shows their work and tells a story."
+    },
+    "followUs": "Follow Us:",
+    "copyright": "© {{year}} {{company}}. All Rights Reserved.",
+    "widgets": {
+      "services": {
+        "title": "Services",
+        "links": {
+          "branding": "Branding",
+          "marketing": "Marketing",
+          "graphicDesign": "Graphic Design",
+          "webDesign": "Web Design",
+          "contentCreation": "Content Creation"
+        }
+      },
+      "aboutUs": {
+        "title": "About Us",
+        "links": {
+          "aboutUs": "About Us",
+          "aboutMe": "About Me",
+          "ourTeam": "Our Team",
+          "testimonials": "Testimonials",
+          "getInTouch": "Get in Touch"
+        }
+      },
+      "resources": {
+        "title": "Resources",
+        "links": {
+          "pricing": "Pricing",
+          "helpCenter": "Help Center",
+          "ourServices": "Our Services",
+          "termsOfUse": "Terms of Use",
+          "privacyPolicy": "Privacy Policy"
+        }
+      }
+    }
   },
 
   "internship": {
@@ -201,6 +236,59 @@
         "resumeInvalid": "Please enter a valid resume URL",
         "resumeRequired": "Resume link is required",
         "skillsRequired": "Please list your skills"
+      }
+    }
+  },
+  "contact": {
+    "aboutUsSection": {
+      "title": "Ready to ignite your brand's fire? 🔥 Let's connect! 🤝",
+      "description": "At Inovite, we believe in the power of collaboration and shared passion. We're not just a creative agency, we're your partners in igniting your brand's unique potential. So, whether you're brimming with ideas or just starting to spark, reach out and let's chat!"
+    },
+    "ctaSection": {
+      "title": "Let's discuss your next creative project.",
+      "description": "We help creative agencies, designers, and other creative people showcase their perfect work.",
+      "counters": {
+        "projects": {
+          "number": "420",
+          "label": "Projects Done"
+        },
+        "clients": {
+          "number": "8",
+          "suffix": "K+",
+          "label": "Happy Clients"
+        },
+        "years": {
+          "number": "12",
+          "suffix": "+",
+          "label": "Years in Work"
+        }
+      }
+    },
+    "letsTalk": {
+      "title": "Let's 🗣 talk!",
+      "subtitle": "Here's how you can connect with the Inovite team:",
+      "phone": {
+        "title": "Phone",
+        "subtitle": "+91 74477 06777",
+        "description": "Give us a call and chat directly with our friendly team. We're always happy to answer any questions."
+      },
+      "email": {
+        "title": "Email",
+        "subtitle": "connect@inovite.in",
+        "description": "Send us a detailed message. We'll get back to you as soon as possible to discuss your creative project further."
+      },
+      "social": {
+        "title": "Social Media",
+        "description": "Follow us on Social Media Platforms for a glimpse into our creative world, industry insights, and projects."
+      }
+    },
+    "visitStudio": {
+      "title": "Visit our Studio",
+      "subtitle": "Come visit! We love welcoming potential collaborators into our vibrant space. Schedule a tour and get inspired by our creative energy.",
+      "address": {
+        "title": "Address",
+        "subtitle": "Sonigara Landmark, 110,<br />Chatrapati Chowk Rd,<br />Wakad, Pune",
+        "description": "Drop by our vibrant studio. We'd love to welcome you and share our creative vibe. Let's fuel your vision!"
       }
     }
   }

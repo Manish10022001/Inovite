@@ -129,7 +129,7 @@ export default function Home() {
                     {t("home.services.title")}
                   </h2>
                   <p
-                    className="bringer-large-text"
+                    className="bringer-large-text mb-5"
                     data-appear="fade-up"
                     data-unload="fade-up"
                     data-delay="100"
@@ -296,7 +296,7 @@ export default function Home() {
                     {t("home.portfolio.title")}
                   </h2>
                   <p
-                    className="bringer-large-text"
+                    className="bringer-large-text mb-5"
                     data-appear="fade-up"
                     data-unload="fade-up"
                     data-delay="100"

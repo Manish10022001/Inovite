@@ -51,7 +51,7 @@ export default function Internship() {
         {/* Section Title */}
         <div className="stg-row bringer-section-title">
           <div className="stg-col-8 stg-offset-2">
-            <div className="align-center"> <br /> <br />
+            <div className="align-center mt-4"> {/*<br /> <br />*/}
               <h2 data-appear="fade-up" data-unload="fade-up">
                 {t("internship.title")}
               </h2>

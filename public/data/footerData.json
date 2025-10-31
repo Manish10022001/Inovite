@@ -2,7 +2,6 @@
   "company": {
     "name": "Inovite Services Pvt. Ltd.",
     "logo": "/img/logo.png",
-    "description": "We are a passionate team of developers and designers who believe in the power of creativity. We help creative people create a strong online presence that shows their work and tells a story.",
     "socials": [
       { "platform": "facebook", "url": "https://facebook.com/inovite" },
       { "platform": "instagram", "url": "https://instagram.com/inovite" },
@@ -13,33 +12,33 @@
   },
   "widgets": [
     {
-      "title": "Services",
+      "id": "services",
       "links": [
-        { "name": "Branding", "url": "/services/branding" },
-        { "name": "Marketing", "url": "/services/marketing" },
-        { "name": "Graphic Design", "url": "/services/graphic-design" },
-        { "name": "Web Design", "url": "/services/web-design" },
-        { "name": "Content Creation", "url": "/services/content" }
+        { "key": "branding", "url": "/services/branding" },
+        { "key": "marketing", "url": "/services/marketing" },
+        { "key": "graphicDesign", "url": "/services/graphic-design" },
+        { "key": "webDesign", "url": "/services/web-design" },
+        { "key": "contentCreation", "url": "/services/content" }
       ]
     },
     {
-      "title": "About Us",
+      "id": "aboutUs",
       "links": [
-        { "name": "About Us", "url": "/about" },
-        { "name": "About Me", "url": "/about/me" },
-        { "name": "Our Team", "url": "/about/team" },
-        { "name": "Testimonials", "url": "/testimonials" },
-        { "name": "Get in Touch", "url": "/contact" }
+        { "key": "aboutUs", "url": "/about" },
+        { "key": "aboutMe", "url": "/about/me" },
+        { "key": "ourTeam", "url": "/about/team" },
+        { "key": "testimonials", "url": "/testimonials" },
+        { "key": "getInTouch", "url": "/contact" }
       ]
     },
     {
-      "title": "Resources",
+      "id": "resources",
       "links": [
-        { "name": "Pricing", "url": "/pricing" },
-        { "name": "Help Center", "url": "/help" },
-        { "name": "Our Services", "url": "/services" },
-        { "name": "Terms of Use", "url": "/terms" },
-        { "name": "Privacy Policy", "url": "/privacy" }
+        { "key": "pricing", "url": "/pricing" },
+        { "key": "helpCenter", "url": "/help" },
+        { "key": "ourServices", "url": "/services" },
+        { "key": "termsOfUse", "url": "/terms" },
+        { "key": "privacyPolicy", "url": "/privacy" }
       ]
     }
   ]
