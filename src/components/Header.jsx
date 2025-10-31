@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const { t } = useTranslation();
+
   return (
     <header
       id="bringer-header"
@@ -16,6 +19,7 @@ export default function Header() {
             <img src="/img/logo.png" alt="bringer." width="88" height="24" />
           </a>
         </div>
+
         {/* Main Menu */}
         <div className="bringer-header-mp">
           <nav className="bringer-nav">
@@ -25,94 +29,94 @@ export default function Header() {
               data-stagger-delay="75"
             >
               <li>
-                <a href="#">Services</a>
+                <a href="#">{t("menu.services")}</a>
                 <ul className="sub-menu">
                   <li>
-                    <a href="#">Software Development</a>
+                    <a href="#">{t("menu.softwareDevelopment")}</a>
                     <ul className="sub-menu">
                       <li>
-                        <a href="#">Software Consulting</a>
+                        <a href="#">{t("menu.softwareConsulting")}</a>
                       </li>
                       <li>
-                        <a href="#">ERP Software Development</a>
+                        <a href="#">{t("menu.erpSoftware")}</a>
                       </li>
                       <li>
-                        <a href="#">Custom CRM Development</a>
+                        <a href="#">{t("menu.customCRM")}</a>
                       </li>
                       <li>
-                        <a href="#">AR/VR Development</a>
+                        <a href="#">{t("menu.arVrDevelopment")}</a>
                       </li>
                       <li>
-                        <a href="#">IoT Development</a>
+                        <a href="#">{t("menu.iotDevelopment")}</a>
                       </li>
                       <li>
-                        <a href="#">Microservices</a>
+                        <a href="#">{t("menu.microservices")}</a>
                       </li>
                       <li>
-                        <a href="#">Product Development</a>
+                        <a href="#">{t("menu.productDevelopment")}</a>
                       </li>
                       <li>
-                        <a href="#">Maintenance & Support</a>
+                        <a href="#">{t("menu.maintenanceSupport")}</a>
                       </li>
                     </ul>
                   </li>
 
                   <li>
-                    <a href="#">Application Development</a>
+                    <a href="#">{t("menu.applicationDevelopment")}</a>
                     <ul className="sub-menu">
                       <li>
-                        <a href="#">Web Application</a>
+                        <a href="#">{t("menu.webApplication")}</a>
                       </li>
                       <li>
-                        <a href="#">Custom Application</a>
+                        <a href="#">{t("menu.customApplication")}</a>
                       </li>
                       <li>
-                        <a href="#">Application Modernization</a>
+                        <a href="#">{t("menu.applicationModernization")}</a>
                       </li>
                       <li>
-                        <a href="#">Application Management</a>
+                        <a href="#">{t("menu.applicationManagement")}</a>
                       </li>
                       <li>
-                        <a href="#">Application Maintenance</a>
+                        <a href="#">{t("menu.applicationMaintenance")}</a>
                       </li>
                       <li>
-                        <a href="#">Cloud Application</a>
+                        <a href="#">{t("menu.cloudApplication")}</a>
                       </li>
                       <li>
-                        <a href="#">Application Integration</a>
+                        <a href="#">{t("menu.applicationIntegration")}</a>
                       </li>
                       <li>
-                        <a href="#">Ecommerce Application</a>
+                        <a href="#">{t("menu.ecommerceApplication")}</a>
                       </li>
                     </ul>
                   </li>
 
                   <li>
-                    <a href="#">Other Services</a>
+                    <a href="#">{t("menu.otherServices")}</a>
                     <ul className="sub-menu">
                       <li>
-                        <a href="#">Mobile App Development</a>
+                        <a href="#">{t("menu.mobileAppDevelopment")}</a>
                       </li>
                       <li>
-                        <a href="#">Hire Dedicated Developers</a>
+                        <a href="#">{t("menu.hireDevelopers")}</a>
                       </li>
                       <li>
-                        <a href="#">Full Stack Development</a>
+                        <a href="#">{t("menu.fullStackDevelopment")}</a>
                       </li>
                       <li>
-                        <a href="#">SaaS Development</a>
+                        <a href="#">{t("menu.saasDevelopment")}</a>
                       </li>
                       <li>
-                        <a href="#">Artificial Intelligence</a>
+                        <a href="#">{t("menu.artificialIntelligence")}</a>
                       </li>
                       <li>
-                        <a href="#">Data Analytics</a>
+                        <a href="#">{t("menu.dataAnalytics")}</a>
                       </li>
                       <li>
-                        <a href="#">Business Intelligence</a>
+                        <a href="#">{t("menu.businessIntelligence")}</a>
                       </li>
                       <li>
-                        <a href="#">UX/UI Design</a>
+                        <a href="#">{t("menu.uxUiDesign")}</a>
                       </li>
                     </ul>
                   </li>
@@ -120,66 +124,66 @@ export default function Header() {
               </li>
 
               <li>
-                <a href="#">Industries</a>
+                <a href="#">{t("menu.industries")}</a>
                 <ul className="sub-menu">
                   <li>
-                    <a href="#">Industries</a>
+                    <a href="#">{t("menu.industries")}</a>
                     <ul className="sub-menu">
                       {/* Group 1 */}
                       <li>
-                        <a href="#">Business & Services</a>
+                        <a href="#">{t("menu.businessServices")}</a>
                         <ul className="sub-menu">
                           <li>
-                            <a href="#">Retail</a>
+                            <a href="#">{t("menu.retail")}</a>
                           </li>
                           <li>
-                            <a href="#">Healthcare</a>
+                            <a href="#">{t("menu.healthcare")}</a>
                           </li>
                           <li>
-                            <a href="#">E-commerce</a>
+                            <a href="#">{t("menu.ecommerce")}</a>
                           </li>
                           <li>
-                            <a href="#">Education / eLearning</a>
+                            <a href="#">{t("menu.education")}</a>
                           </li>
                           <li>
-                            <a href="#">Manufacturing</a>
+                            <a href="#">{t("menu.manufacturing")}</a>
                           </li>
                           <li>
-                            <a href="#">Real Estate</a>
+                            <a href="#">{t("menu.realEstate")}</a>
                           </li>
                           <li>
-                            <a href="#">Logistics & Distribution</a>
+                            <a href="#">{t("menu.logistics")}</a>
                           </li>
                           <li>
-                            <a href="#">Fintech</a>
+                            <a href="#">{t("menu.fintech")}</a>
                           </li>
                         </ul>
                       </li>
 
                       {/* Group 2 */}
                       <li>
-                        <a href="#">Lifestyle & On-Demand</a>
+                        <a href="#">{t("menu.lifestyleOnDemand")}</a>
                         <ul className="sub-menu">
                           <li>
-                            <a href="#">Restaurant App</a>
+                            <a href="#">{t("menu.restaurantApp")}</a>
                           </li>
                           <li>
-                            <a href="#">Beauty & Lifestyle</a>
+                            <a href="#">{t("menu.beautyLifestyle")}</a>
                           </li>
                           <li>
-                            <a href="#">Travel & Hospitality</a>
+                            <a href="#">{t("menu.travelHospitality")}</a>
                           </li>
                           <li>
-                            <a href="#">Fitness App</a>
+                            <a href="#">{t("menu.fitnessApp")}</a>
                           </li>
                           <li>
-                            <a href="#">Social Media App</a>
+                            <a href="#">{t("menu.socialMediaApp")}</a>
                           </li>
                           <li>
-                            <a href="#">Beauty Services App</a>
+                            <a href="#">{t("menu.beautyServicesApp")}</a>
                           </li>
                           <li>
-                            <a href="#">On-Demand App</a>
+                            <a href="#">{t("menu.onDemandApp")}</a>
                           </li>
                         </ul>
                       </li>
@@ -189,85 +193,84 @@ export default function Header() {
                   <li className="bringer-menu-divider"></li>
 
                   <li>
-                    <a href="#">Download Ebook</a>
+                    <a href="#">{t("menu.downloadEbook")}</a>
                   </li>
                 </ul>
               </li>
 
-              {/* First Root Menu */}
+              {/* Root Menu */}
               <li>
-                <a href="#">Discover</a>
+                <a href="#">{t("menu.discover")}</a>
                 <ul className="sub-menu">
-                  {/* Featured */}
                   <li>
-                    <a href="#">Featured</a>
+                    <a href="#">{t("menu.featured")}</a>
                     <ul className="sub-menu">
                       <li>
-                        <a href="#">Vision & Roadmap</a>
+                        <a href="#">{t("menu.visionRoadmap")}</a>
                       </li>
                       <li>
-                        <a href="#">Collaboration Models</a>
+                        <a href="#">{t("menu.collaborationModels")}</a>
                       </li>
                     </ul>
                   </li>
 
-                  {/* Resources */}
                   <li>
-                    <a href="#">Resources</a>
+                    <a href="#">{t("menu.resources")}</a>
                     <ul className="sub-menu">
                       <li>
-                        <a href="#">Stories</a>
+                        <a href="#">{t("menu.stories")}</a>
                       </li>
                       <li>
-                        <a href="#">Case Study</a>
+                        <a href="#">{t("menu.caseStudy")}</a>
                       </li>
                       <li>
-                        <a href="#">News</a>
+                        <a href="#">{t("menu.news")}</a>
                       </li>
                       <li>
-                        <a href="/blog">Blog</a>
+                        <a href="/blog">{t("menu.blog")}</a>
                       </li>
                     </ul>
                   </li>
                 </ul>
               </li>
 
-              {/* Second Root Menu */}
               <li>
-                <a href="#">Company</a>
+                <a href="#">{t("menu.company")}</a>
                 <ul className="sub-menu">
                   <li>
-                    <a href="#">Team Extension</a>
+                    <a href="#">{t("menu.teamExtension")}</a>
                   </li>
                   <li>
-                    <a href="#">How We Work</a>
+                    <a href="#">{t("menu.howWeWork")}</a>
                   </li>
                   <li>
-                    <a href="#">About Us</a>
+                    <a href="#">{t("menu.aboutUs")}</a>
                   </li>
                   <li>
-                    <a href="#">Startup</a>
+                    <a href="#">{t("menu.startup")}</a>
                   </li>
                   <li>
-                    <a href="/contact">Contact Us</a>
+                    <a href="/contact">{t("menu.contactUs")}</a>
                   </li>
                 </ul>
               </li>
 
               <li>
-                <a href="#">Careers</a>
+                <a href="#">{t("menu.careers")}</a>
                 <ul className="sub-menu">
                   <li>
-                    <a href="/careers/internship">Internship</a>
+                    <a href="/careers/internship">{t("menu.internship")}</a>
                   </li>
                   <li>
-                    <a href="#">Jobs</a>
+                    <a href="#">{t("menu.jobs")}</a>
                     <ul className="sub-menu">
                       <li>
-                        <a href="/careers/jobs/tech">Tech Roles</a>
+                        <a href="/careers/jobs/tech">{t("menu.techRoles")}</a>
                       </li>
                       <li>
-                        <a href="/careers/jobs/nontech">Non-Tech Roles</a>
+                        <a href="/careers/jobs/nontech">
+                          {t("menu.nonTechRoles")}
+                        </a>
                       </li>
                     </ul>
                   </li>
@@ -276,18 +279,27 @@ export default function Header() {
             </ul>
           </nav>
         </div>
-        {/* Header Button */}
+
+        {/* Header Right Section */}
         <div className="bringer-header-rp">
-          <a href="/contact" className="bringer-button">
-            <b>Let's Build Together</b>
-          </a>
+          <div
+            className="bringer-header-actions"
+            style={{ display: "flex", alignItems: "center", gap: "15px" }}
+          >
+            {/* CTA Button */}
+            <a href="/contact" className="bringer-button">
+              <b>{t("header.letsBuildTogether")}</b>
+            </a>
+          </div>
         </div>
       </div>
+
       {/* Mobile Header */}
       <div className="bringer-mobile-header-inner">
         <a href="/" className="bringer-logo">
           <img src="/img/logo.png" alt="bringer." width="88" height="24" />
         </a>
+
         <a href="#" className="bringer-mobile-menu-toggler">
           <i className="bringer-menu-toggler-icon">
             <span></span>
@@ -298,5 +310,4 @@ export default function Header() {
       </div>
     </header>
   );
-};
-
+}

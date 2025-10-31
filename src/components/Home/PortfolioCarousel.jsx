@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
+import "../../styles/PortfolioCarousel.css";
 export default function PortfolioCarousel({ portfolioItems }) {
   return (
     <div className="bringer-carousel-wrapper">

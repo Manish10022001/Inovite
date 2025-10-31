@@ -1,7 +1,6 @@
-import react from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next"; // Import useTranslation
 import axios from "axios";
-
 import HeroSection from "../components/Home/HeroSection";
 import ServiceList from "../components/Home/ServiceList";
 import PortfolioCarousel from "../components/Home/PortfolioCarousel";
@@ -9,64 +8,64 @@ import TestimonialCard from "../components/Home/TestimonialCard";
 import CTA from "../components/Home/CTA";
 
 export default function Home() {
+  const { t } = useTranslation(); // Hook for translations
+
+  // Services now use translations
   const services = [
     {
       imgSrc: "/img/home/service01.jpg",
-      alt: "Branding",
-      title: "Branding",
-      description:
-        "We weave visual stories and craft strategic messaging that resonate at heartstrings, build unwavering trust, and turn customers into fervent brand champions.",
+      alt: t("home.services.branding.alt"),
+      title: t("home.services.branding.title"),
+      description: t("home.services.branding.description"),
     },
     {
       imgSrc: "/img/home/service02.jpg",
-      alt: "Marketing",
-      title: "Marketing",
-      description:
-        "We design data-driven campaigns that crackle with energy, ignite engagement like wildfire, and turn clicks into conversions. We're the storm that promote your brand.",
+      alt: t("home.services.marketing.alt"),
+      title: t("home.services.marketing.title"),
+      description: t("home.services.marketing.description"),
     },
     {
       imgSrc: "/img/home/service03.jpg",
-      alt: "Web Design",
-      title: "Web Design",
-      description:
-        "We sculpt user-friendly websites that convert visitors into loyal devotees with intuitive navigation and flawless experiences for every screen. We craft that digital haven.",
+      alt: t("home.services.webDesign.alt"),
+      title: t("home.services.webDesign.title"),
+      description: t("home.services.webDesign.description"),
     },
     {
       imgSrc: "/img/home/service04.jpg",
-      alt: "Graphic Design",
-      title: "Graphic Design",
-      description:
-        "We craft visual masterpieces that sing your brand's story in vibrant colors and captivating shapes. From logos that lodge in minds to infographics that make complex ideas sing.",
+      alt: t("home.services.graphicDesign.alt"),
+      title: t("home.services.graphicDesign.title"),
+      description: t("home.services.graphicDesign.description"),
     },
   ];
 
+  // Marquee list with translations
   const marqueeList = [
-    { title: "Branding" },
-    { title: "Marketing" },
-    { title: "Graphic Design" },
-    { title: "Web Design" },
+    { title: t("home.tags.branding") },
+    { title: t("home.tags.marketing") },
+    { title: t("home.tags.graphicDesign") },
+    { title: t("home.tags.webDesign") },
     { title: "UX/UI" },
   ];
 
   const [partners, setPartners] = useState([]);
   const [portfolioItems, setPortfolioItems] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
+
   useEffect(() => {
     axios.get("/data/partners.json").then((response) => {
       setPartners(response.data);
     });
-
     axios
       .get("/data/portfolio.json")
       .then((res) => setPortfolioItems(res.data));
-
     axios.get("/data/testimonials.json").then((response) => {
       setTestimonials(response.data);
     });
   }, []);
+
   return (
     <>
-      <main id="bringer-main">
+      <main >
         <div className="stg-container">
           {/* Hero Section */}
           <HeroSection />
@@ -83,7 +82,7 @@ export default function Home() {
                   <img
                     src="/img/null.png"
                     data-src="/img/home/about-1.jpeg"
-                    alt="about Us"
+                    alt={t("home.about.title")}
                     className="bringer-lazy"
                     width="960"
                     height="960"
@@ -96,18 +95,11 @@ export default function Home() {
                 data-unload="fade-right"
               >
                 <div>
-                  <h3>We are passionate team of designers and developers.</h3>
+                  <h3>{t("home.about.title")}</h3>
                   <p className="bringer-large-text">
-                    We are a passionate team of designers and developers who
-                    believe in the power of creativity.
+                    {t("home.about.subtitle")}
                   </p>
-                  <p>
-                    We are a team of passionate and experienced designers,
-                    developers, and marketers who specialize in helping
-                    businesses of all sizes achieve their goals. We believe that
-                    creativity is the key to success, and we are committed to
-                    helping our clients unleash their full potential.
-                  </p>
+                  <p>{t("home.about.description")}</p>
                 </div>
                 <a
                   href="/about-us"
@@ -118,26 +110,23 @@ export default function Home() {
                     <i className="bringer-icon bringer-icon-explore"></i>
                   </div>
                   <div className="bringer-icon-link-content">
-                    <h6>
-                      We are
-                      <br />
-                      Passionate Team
-                    </h6>
-                    <span className="bringer-label">Learn More About Us</span>
+                    <h6>{t("home.about.linkTitle")}</h6>
+                    <span className="bringer-label">
+                      {t("home.about.linkLabel")}
+                    </span>
                   </div>
                 </a>
               </div>
             </div>
           </section>
 
-          {/* Service Section */}
+          {/* Services Section */}
           <section className="backlight-bottom">
-            {/* Section Title */}
             <div className="stg-row bringer-section-title">
               <div className="stg-col-8 stg-offset-2">
                 <div className="align-center">
                   <h2 data-appear="fade-up" data-unload="fade-up">
-                    Our Services
+                    {t("home.services.title")}
                   </h2>
                   <p
                     className="bringer-large-text"
@@ -145,15 +134,12 @@ export default function Home() {
                     data-unload="fade-up"
                     data-delay="100"
                   >
-                    We offer a wide range of creative services to help
-                    businesses of all sizes achieve their goals. Our services
-                    include:
+                    {t("home.services.subtitle")}
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* List with Preview */}
             <div
               className="bringer-list-with-preview"
               data-preview-position="left"
@@ -171,17 +157,16 @@ export default function Home() {
                   />
                 ))}
 
-                {/* Learn More */}
                 <div className="align-right">
                   <a href="#" className="bringer-arrow-link">
-                    Discover all services
+                    {t("home.services.discoverAll")}
                   </a>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Section : Marquee */}
+          {/* Marquee Section */}
           <section className="is-fullwidth is stretched" data-padding="none">
             <div className="bringer-marquee" data-speed="5000">
               <div className="bringer-marquee-inner">
@@ -196,7 +181,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Section :Why CHoose us */}
+          {/* Why Choose Us Section */}
           <section>
             <div className="stg-row stg-large-gap">
               <div
@@ -204,16 +189,13 @@ export default function Home() {
                 data-unload="fade-left"
               >
                 <div className="bringer-sticky-block">
-                  <h2>Why Choose Us</h2>
+                  <h2>{t("home.whyChoose.title")}</h2>
                   <p className="bringer-large-text">
-                    We are a passionate team of designers and developers who
-                    believe in the power of creativity. We help creative
-                    professionals create a strong online presence that showcases
-                    their work and tells their story.
+                    {t("home.whyChoose.subtitle")}
                   </p>
                   <div className="align-right">
                     <a href="/about-us" className="bringer-arrow-link">
-                      Learn More About Us
+                      {t("home.whyChoose.learnMore")}
                     </a>
                   </div>
                 </div>
@@ -226,39 +208,24 @@ export default function Home() {
                   data-threshold="0.5"
                   data-stagger-delay="150"
                 >
-                  {/* Card Item */}
                   <div className="bringer-block">
                     <h4>
                       We don't just design, we{" "}
                       <span className="bringer-accent">unleash creative</span>{" "}
                       firestorms<span className="bringer-accent">.</span>
                     </h4>
-                    <p>
-                      Tired of bland marketing and cookie-cutter websites? We
-                      infuse your brand with bold ideas and strategic
-                      brilliance, igniting campaigns that capture hearts and
-                      drive tangible results. Forget sparklers, we're here to
-                      light galaxies on fire.
-                    </p>
+                    <p>{t("home.whyChoose.point1.description")}</p>
                   </div>
 
-                  {/* Card Item */}
                   <div className="bringer-block">
                     <h4>
                       We <span className="bringer-accent">fuel creativity</span>{" "}
                       with data, guide passion with precision
                       <span className="bringer-accent">.</span>
                     </h4>
-                    <p>
-                      We're not just artistic dreamers, we're strategic
-                      alchemists. We blend data-driven insights with unbridled
-                      passion, ensuring your campaigns reach the right audience,
-                      hit the right chords, and deliver measurable results.
-                      Because passion without direction is a beautiful mess.
-                    </p>
+                    <p>{t("home.whyChoose.point2.description")}</p>
                   </div>
 
-                  {/* Card Item */}
                   <div className="bringer-block">
                     <h4>
                       We craft{" "}
@@ -268,36 +235,23 @@ export default function Home() {
                       , not just visuals and copy
                       <span className="bringer-accent">.</span>
                     </h4>
-                    <p>
-                      We delve deeper than pixels and prose. We understand the
-                      human heart, the language of emotions. We weave stories
-                      that resonate, visuals that linger in minds, and content
-                      that sparks conversations. Because true connection is the
-                      foundation of brand loyalty.
-                    </p>
+                    <p>{t("home.whyChoose.point3.description")}</p>
                   </div>
 
-                  {/* Card Item */}
                   <div className="bringer-block">
                     <h4>
                       We don't just work with you, we become your{" "}
                       <span className="bringer-accent">creative champions</span>
                       <span className="bringer-accent">.</span>
                     </h4>
-                    <p>
-                      We don't see clients, we see collaborators. We believe in
-                      building partnerships, in understanding your vision, and
-                      becoming an extension of your team. Your goals are our
-                      canvas, your success our masterpiece. We paint your dreams
-                      into reality, together.
-                    </p>
+                    <p>{t("home.whyChoose.point4.description")}</p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Section :Counters */}
+          {/* Partners Section */}
           <section data-padding="none">
             <div
               className="bringer-hero-media-wrap stg-bottom-gap stg-tp-bottom-gap-1"
@@ -308,14 +262,13 @@ export default function Home() {
               className="bringer-hero-block bringer-hero-type08"
               style={{ paddingTop: 0, marginTop: 0 }}
             >
-              {/* Partners Section */}
               <div className="bringer-partners">
                 <span
                   className="bringer-label"
                   data-appear="fade-up"
                   data-unload="fade-up"
                 >
-                  Trusted by Industry Leaders
+                  {t("home.partners.label")}
                 </span>
                 <div
                   className="bringer-grid-6cols bringer-tp-grid-3cols bringer-m-grid-2cols stg-top-gap-s"
@@ -334,14 +287,13 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Section Portfolio */}
+          {/* Portfolio Section */}
           <section className="is-fullwidth is stretched">
-            {/* Section title */}
             <div className="stg-row bringer-section-title is-boxed">
               <div className="stg-col-8 stg-offset-2">
                 <div className="align-center">
                   <h2 data-appear="fade-up" data-unload="fade-up">
-                    Our Work
+                    {t("home.portfolio.title")}
                   </h2>
                   <p
                     className="bringer-large-text"
@@ -349,16 +301,13 @@ export default function Home() {
                     data-unload="fade-up"
                     data-delay="100"
                   >
-                    We are proud of our work, and we are always looking for new
-                    challenges. Take a look at some of our recent portfolio:
+                    {t("home.portfolio.subtitle")}
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Portfolio Carousel */}
             <PortfolioCarousel portfolioItems={portfolioItems} />
-
             <div
               className="align-center"
               data-appear="fade-up"
@@ -366,17 +315,17 @@ export default function Home() {
               data-delay="100"
             >
               <a href="portfolio-slider.html" className="bringer-button">
-                Discover Full Portfolio
+                {t("home.portfolio.discoverFull")}
               </a>
             </div>
           </section>
 
-          {/* Section : Testimonials */}
+          {/* Testimonials Section */}
           <section className="backlight-top">
             <div className="bringer-expand-on-scroll">
               <img
                 src="/img/home/about-2.jpeg"
-                alt="Testimonials"
+                alt={t("home.testimonials.title")}
                 data-unload="fade-up"
               />
             </div>
@@ -386,35 +335,33 @@ export default function Home() {
                 data-unload="fade-left"
               >
                 <div className="bringer-sticky-block">
-                  <h2>What Clients Say</h2>
+                  <h2>{t("home.testimonials.title")}</h2>
                   <p className="bringer-large-text">
-                    Here are some of the most inspiring reviews from our
-                    clients. Your opinion is very important to us 'cause we have
-                    always try to evolve and improve in the professional field
-                    and work on mistakes.
+                    {t("home.testimonials.subtitle")}
                   </p>
                   <div className="align-right">
                     <a href="testimonials.html" className="bringer-arrow-link">
-                      Read all Testimonials
+                      {t("home.testimonials.readAll")}
                     </a>
                   </div>
                 </div>
               </div>
               <div className="stg-col-6">
                 <div className="bringer-grid-1col stg-normal-gap">
-                  {testimonials.map((t, index) => (
+                  {testimonials.map((testimonial, index) => (
                     <TestimonialCard
                       key={index}
-                      description={t.description}
-                      name={t.name}
-                      position={t.position}
-                      rating={t.rating}
+                      description={testimonial.description}
+                      name={testimonial.name}
+                      position={testimonial.position}
+                      rating={testimonial.rating}
                     />
                   ))}
                 </div>
               </div>
             </div>
           </section>
+
           <CTA />
         </div>
       </main>

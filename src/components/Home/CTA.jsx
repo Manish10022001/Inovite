@@ -1,41 +1,39 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 
 export default function CTA() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!email) {
-      setResponseMessage("Please, fill out the form.");
+      setResponseMessage(t("home.cta.fillForm"));
       return;
     }
 
     setLoading(true);
-
     try {
       const response = await axios.post(
-        "https://demo.shadow-themes.com/html/bringer/mail-short.php",
+        "https://your-api-endpoint.com/subscribe",
         {
           subscribe_email: email,
         }
       );
 
       if (response.status === 200) {
-        setResponseMessage("Thank you for subscribing!");
+        setResponseMessage(t("home.cta.thankYou"));
+        setEmail("");
       } else {
-        setResponseMessage(
-          "There was an issue with your submission. Please try again."
-        );
+        setResponseMessage(t("home.cta.submissionIssue"));
       }
     } catch (error) {
-      setResponseMessage("There was an error. Please try again later.");
+      setResponseMessage(t("home.cta.error"));
     }
-
     setLoading(false);
   };
 
@@ -56,16 +54,14 @@ export default function CTA() {
               data-appear="fade-up"
               data-delay="100"
             >
-              <div className="bringer-cta-title">
-                Ready to set your Brand ablaze?
-              </div>
+              <div className="bringer-cta-title">{t("home.cta.title")}</div>
               <input
                 type="email"
                 id="subscribe_email"
                 name="subscribe_email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="email@example.com"
+                placeholder={t("home.cta.placeholder")}
                 required
               />
             </div>
@@ -86,7 +82,7 @@ export default function CTA() {
         </form>
         <div className="bringer-masked-cta-content bringer-masked-content at-top-right">
           <p className="bringer-large-text" data-appear="fade-down">
-            Let's craft a visual identity that ignites passion and loyalty. ✨
+            {t("home.cta.subtitle")}
           </p>
         </div>
       </div>

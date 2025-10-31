@@ -1,7 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+
 export default function Internship() {
+  const { t } = useTranslation();
+
   // Formik form setup with validation schema using Yup
   const formik = useFormik({
     initialValues: {
@@ -14,24 +18,30 @@ export default function Internship() {
       skills: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("Full Name is required"),
+      name: Yup.string().required(t("internship.form.validation.nameRequired")),
       email: Yup.string()
-        .email("Invalid email format")
-        .required("Email is required"),
-      college: Yup.string().required("College Name is required"),
+        .email(t("internship.form.validation.emailInvalid"))
+        .required(t("internship.form.validation.emailRequired")),
+      college: Yup.string().required(
+        t("internship.form.validation.collegeRequired")
+      ),
       year: Yup.number()
-        .required("Completion Year is required")
-        .min(2022, "Completion year must be after 2022")
-        .max(2100, "Invalid year"),
-      course: Yup.string().required("Course Name is required"),
+        .required(t("internship.form.validation.yearRequired"))
+        .min(2022, t("internship.form.validation.yearMin"))
+        .max(2100, t("internship.form.validation.yearMax")),
+      course: Yup.string().required(
+        t("internship.form.validation.courseRequired")
+      ),
       resume: Yup.string()
-        .url("Invalid URL")
-        .required("Resume link is required"),
-      skills: Yup.string().required("Skills are required"),
+        .url(t("internship.form.validation.resumeInvalid"))
+        .required(t("internship.form.validation.resumeRequired")),
+      skills: Yup.string().required(
+        t("internship.form.validation.skillsRequired")
+      ),
     }),
     onSubmit: (values) => {
       console.log("Form submitted with values:", values);
-      alert("Application submitted successfully!");
+      alert(t("internship.form.successMessage"));
     },
   });
 
@@ -43,7 +53,7 @@ export default function Internship() {
           <div className="stg-col-8 stg-offset-2">
             <div className="align-center">
               <h2 data-appear="fade-up" data-unload="fade-up">
-                Apply for Internship
+                {t("internship.title")}
               </h2>
               <p
                 className="bringer-large-text"
@@ -71,7 +81,7 @@ export default function Internship() {
                 {/* Full Name */}
                 <div className="col-md-6">
                   <label htmlFor="name" className="form-label">
-                    Full Name
+                    {t("internship.form.name")}
                   </label>
                   <input
                     type="text"
@@ -82,7 +92,7 @@ export default function Internship() {
                         ? "is-invalid"
                         : ""
                     }`}
-                    placeholder="Enter your full name"
+                    placeholder={t("internship.form.namePlaceholder")}
                     value={formik.values.name}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -96,7 +106,7 @@ export default function Internship() {
                 {/* Email */}
                 <div className="col-md-6">
                   <label htmlFor="email" className="form-label">
-                    Email
+                    {t("internship.form.email")}
                   </label>
                   <input
                     type="email"
@@ -107,7 +117,7 @@ export default function Internship() {
                         ? "is-invalid"
                         : ""
                     }`}
-                    placeholder="you@example.com"
+                    placeholder={t("internship.form.emailPlaceholder")}
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -123,7 +133,7 @@ export default function Internship() {
                 {/* College Name */}
                 <div className="col-md-6">
                   <label htmlFor="college" className="form-label">
-                    College Name
+                    {t("internship.form.college")}
                   </label>
                   <input
                     type="text"
@@ -134,7 +144,7 @@ export default function Internship() {
                         ? "is-invalid"
                         : ""
                     }`}
-                    placeholder="Your college name"
+                    placeholder={t("internship.form.collegePlaceholder")}
                     value={formik.values.college}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -150,7 +160,7 @@ export default function Internship() {
                 {/* Completion Year */}
                 <div className="col-md-6">
                   <label htmlFor="year" className="form-label">
-                    Completion Year
+                    {t("internship.form.year")}
                   </label>
                   <input
                     type="number"
@@ -161,7 +171,7 @@ export default function Internship() {
                         ? "is-invalid"
                         : ""
                     }`}
-                    placeholder="e.g. 2026"
+                    placeholder={t("internship.form.yearPlaceholder")}
                     value={formik.values.year}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -175,7 +185,7 @@ export default function Internship() {
                 {/* Course Name */}
                 <div className="col-md-6">
                   <label htmlFor="course" className="form-label">
-                    Course Name
+                    {t("internship.form.course")}
                   </label>
                   <input
                     type="text"
@@ -186,7 +196,7 @@ export default function Internship() {
                         ? "is-invalid"
                         : ""
                     }`}
-                    placeholder="e.g. B.Tech in CSE"
+                    placeholder={t("internship.form.coursePlaceholder")}
                     value={formik.values.course}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -202,7 +212,7 @@ export default function Internship() {
                 {/* Resume Link */}
                 <div className="col-md-6">
                   <label htmlFor="resume" className="form-label">
-                    Resume Link
+                    {t("internship.form.resume")}
                   </label>
                   <input
                     type="url"
@@ -213,7 +223,7 @@ export default function Internship() {
                         ? "is-invalid"
                         : ""
                     }`}
-                    placeholder="Paste Google Drive or other link"
+                    placeholder={t("internship.form.resumePlaceholder")}
                     value={formik.values.resume}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -229,7 +239,7 @@ export default function Internship() {
                 {/* Skills */}
                 <div className="col-12">
                   <label htmlFor="skills" className="form-label">
-                    Skills (separate with commas)
+                    {t("internship.form.skills")}
                   </label>
                   <input
                     type="text"
@@ -240,7 +250,7 @@ export default function Internship() {
                         ? "is-invalid"
                         : ""
                     }`}
-                    placeholder="Python, Java, HTML, CSS"
+                    placeholder={t("internship.form.skillsPlaceholder")}
                     value={formik.values.skills}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -259,11 +269,10 @@ export default function Internship() {
                     type="submit"
                     className="btn btn-primary px-4 py-2 mt-4"
                   >
-                    Apply Now
+                    {t("internship.form.submit")}
                   </button>
                 </div>
               </div>
-              
             </form>
           </div>
         </div>
