@@ -55,9 +55,19 @@ export default function Footer() {
                   data-stagger-delay="75"
                 >
                   {company.socials.map((social, index) => (
+                    // <li key={index}>
+                    //   <a
+                    //     href={social.url}
+                    //     target="_blank"
+                    //     rel="noopener noreferrer"
+                    //     className={`bringer-socials-${social.platform}`}
+                    //   >
+                    //     <i></i>
+                    //   </a>
+                    // </li>
                     <li key={index}>
                       <a
-                        href={social.url}
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`bringer-socials-${social.platform}`}

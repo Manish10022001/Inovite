@@ -51,7 +51,9 @@ export default function Internship() {
         {/* Section Title */}
         <div className="stg-row bringer-section-title">
           <div className="stg-col-8 stg-offset-2">
-            <div className="align-center mt-4"> {/*<br /> <br />*/}
+            <div className="align-center mt-4">
+              {" "}
+              {/*<br /> <br />*/}
               <h2 data-appear="fade-up" data-unload="fade-up">
                 {t("internship.title")}
               </h2>
@@ -63,7 +65,8 @@ export default function Internship() {
               >
                 Kickstart your career with real-world experience! Fill in the
                 details below to apply for our internship program.
-              </p> <br />
+              </p>{" "}
+              <br />
             </div>
           </div>
         </div>
@@ -101,8 +104,8 @@ export default function Internship() {
                   {formik.touched.name && formik.errors.name ? (
                     <div className="invalid-feedback">{formik.errors.name}</div>
                   ) : null}
-                </div> <br />
-
+                </div>{" "}
+                <br />
                 {/* Email */}
                 <div className="col-md-6">
                   <label htmlFor="email" className="form-label">
@@ -128,8 +131,8 @@ export default function Internship() {
                       {formik.errors.email}
                     </div>
                   ) : null}
-                </div><br />
-
+                </div>
+                <br />
                 {/* College Name */}
                 <div className="col-md-6">
                   <label htmlFor="college" className="form-label">
@@ -155,8 +158,8 @@ export default function Internship() {
                       {formik.errors.college}
                     </div>
                   ) : null}
-                </div><br />
-
+                </div>
+                <br />
                 {/* Completion Year */}
                 <div className="col-md-6">
                   <label htmlFor="year" className="form-label">
@@ -180,8 +183,8 @@ export default function Internship() {
                   {formik.touched.year && formik.errors.year ? (
                     <div className="invalid-feedback">{formik.errors.year}</div>
                   ) : null}
-                </div><br />
-
+                </div>
+                <br />
                 {/* Course Name */}
                 <div className="col-md-6">
                   <label htmlFor="course" className="form-label">
@@ -207,8 +210,8 @@ export default function Internship() {
                       {formik.errors.course}
                     </div>
                   ) : null}
-                </div><br />
-
+                </div>
+                <br />
                 {/* Resume Link */}
                 <div className="col-md-6">
                   <label htmlFor="resume" className="form-label">
@@ -234,8 +237,8 @@ export default function Internship() {
                       {formik.errors.resume}
                     </div>
                   ) : null}
-                </div><br />
-
+                </div>
+                <br />
                 {/* Skills */}
                 <div className="col-12">
                   <label htmlFor="skills" className="form-label">
@@ -261,15 +264,15 @@ export default function Internship() {
                       {formik.errors.skills}
                     </div>
                   ) : null}
-                </div><br />
-
+                </div>
+                <br />
                 {/* Submit Button */}
-                <div className="col-12 text-center ">
+                <div className="col-12  ">
                   <button
                     type="submit"
-                    className="btn btn-primary px-4 py-2 mt-4"
+                    className="btn btn-primary p-3  mt-2"
                   >
-                    {t("internship.form.submit")}
+                    Apply Now
                   </button>
                 </div>
               </div>
