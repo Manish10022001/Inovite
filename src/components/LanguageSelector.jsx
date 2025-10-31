@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Globe } from "lucide-react";
 import "../styles/LanguageSelector.css";
+import i18n from "i18next";
 
 export default function LanguageSelector() {
   const [currentLanguage, setCurrentLanguage] = useState("en");
@@ -13,9 +14,23 @@ export default function LanguageSelector() {
   ];
 
   // Load saved language
+  // useEffect(() => {
+  //   const saved = window.appLanguage || "en";
+  //   setCurrentLanguage(saved);
+  // }, []);
+
+  // useEffect(() => {
+  //   // Always start in English
+  //   setCurrentLanguage("en");
+  //   window.appLanguage = "en";
+  // }, []);
+
   useEffect(() => {
-    const saved = window.appLanguage || "en";
+    // Load saved language from sessionStorage (survives refresh)
+    const saved = sessionStorage.getItem("appLanguage") || "en";
     setCurrentLanguage(saved);
+    window.appLanguage = saved; // keep for dispatch
+    i18n.changeLanguage(saved); // set language on app load
   }, []);
 
   const currentLang =
@@ -32,9 +47,19 @@ export default function LanguageSelector() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
+  // const handleLanguageChange = (langCode) => {
+  //   setCurrentLanguage(langCode);
+  //   window.appLanguage = langCode;
+  //   window.dispatchEvent(
+  //     new CustomEvent("languageChange", { detail: { language: langCode } })
+  //   );
+  //   setIsOpen(false);
+  // };
+
   const handleLanguageChange = (langCode) => {
     setCurrentLanguage(langCode);
     window.appLanguage = langCode;
+    sessionStorage.setItem("appLanguage", langCode); // survive refresh
     window.dispatchEvent(
       new CustomEvent("languageChange", { detail: { language: langCode } })
     );

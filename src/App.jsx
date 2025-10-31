@@ -24,6 +24,7 @@ const App = () => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
+    // i18n.changeLanguage("en"); //force it to be english
     // Listen for language changes from the selector
     const handleLanguageChange = (event) => {
       i18n.changeLanguage(event.detail.language);

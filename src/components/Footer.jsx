@@ -46,7 +46,7 @@ export default function Footer() {
                   />
                 </NavLink>
                 <div className="bringer-info-description">
-                  {company.description}
+                  {t("footer.company.description")}
                 </div>
                 <span className="bringer-label">{t("footer.followUs")}</span>
                 <ul
@@ -54,21 +54,7 @@ export default function Footer() {
                   data-stagger-appear="fade-up"
                   data-stagger-delay="75"
                 >
-                  {["facebook", "instagram", "x", "tiktok", "patreon"].map(
-                    (social) => (
-                      <li key={social}> 
-                        <a
-                          href="#"
-                          target="_blank"
-                          rel="noreferrer"
-                          className={`bringer-socials-${social}`}
-                        >
-                          <i></i>
-                        </a>
-                      </li>
-                    )
-                  )}
-                  {/* {company.socials.map((social, index) => (
+                  {company.socials.map((social, index) => (
                     <li key={index}>
                       <a
                         href={social.url}
@@ -79,7 +65,7 @@ export default function Footer() {
                         <i></i>
                       </a>
                     </li>
-                  ))} */}
+                  ))}
                 </ul>
               </div>
             </div>
@@ -93,12 +79,14 @@ export default function Footer() {
                 } stg-tp-col-4 stg-m-col-4`}
               >
                 <div className="bringer-widget">
-                  <h6>{widget.title}</h6>
+                  <h6>{t(`footer.widgets.${widget.id}.title`)}</h6>
                   <div className="bringer-menu-widget">
                     <ul>
                       {widget.links.map((link, i) => (
                         <li key={i}>
-                          <NavLink to={link.url}>{link.name}</NavLink>
+                          <NavLink to={link.url}>
+                            {t(`footer.widgets.${widget.id}.links.${link.key}`)}
+                          </NavLink>
                         </li>
                       ))}
                     </ul>
