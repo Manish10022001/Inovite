@@ -54,7 +54,21 @@ export default function Footer() {
                   data-stagger-appear="fade-up"
                   data-stagger-delay="75"
                 >
-                  {company.socials.map((social, index) => (
+                  {["facebook", "instagram", "x", "tiktok", "patreon"].map(
+                    (social) => (
+                      <li key={social}>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noreferrer"
+                          className={`bringer-socials-${social}`}
+                        >
+                          <i></i>
+                        </a>
+                      </li>
+                    )
+                  )}
+                  {/* {company.socials.map((social, index) => (
                     <li key={index}>
                       <a
                         href={social.url}
@@ -65,7 +79,7 @@ export default function Footer() {
                         <i></i>
                       </a>
                     </li>
-                  ))}
+                  ))} */}
                 </ul>
               </div>
             </div>
