@@ -56,7 +56,7 @@ export default function Footer() {
                 >
                   {["facebook", "instagram", "x", "tiktok", "patreon"].map(
                     (social) => (
-                      <li key={social}>
+                      <li key={social}> 
                         <a
                           href="#"
                           target="_blank"
