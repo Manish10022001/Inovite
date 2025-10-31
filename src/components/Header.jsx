@@ -1,17 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import "../styles/langSwitcher.css";
+
 export default function Header() {
-  const { t, i18n } = useTranslation();
-
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
-
-  // Function to toggle language based on switch state
-  const toggleLanguage = (e) => {
-    changeLanguage(e.target.checked ? "hi" : "en");
-  };
+  const { t } = useTranslation();
 
   return (
     <header
@@ -28,6 +19,7 @@ export default function Header() {
             <img src="/img/logo.png" alt="bringer." width="88" height="24" />
           </a>
         </div>
+
         {/* Main Menu */}
         <div className="bringer-header-mp">
           <nav className="bringer-nav">
@@ -206,11 +198,10 @@ export default function Header() {
                 </ul>
               </li>
 
-              {/* First Root Menu */}
+              {/* Root Menu */}
               <li>
                 <a href="#">{t("menu.discover")}</a>
                 <ul className="sub-menu">
-                  {/* Featured */}
                   <li>
                     <a href="#">{t("menu.featured")}</a>
                     <ul className="sub-menu">
@@ -223,7 +214,6 @@ export default function Header() {
                     </ul>
                   </li>
 
-                  {/* Resources */}
                   <li>
                     <a href="#">{t("menu.resources")}</a>
                     <ul className="sub-menu">
@@ -244,7 +234,6 @@ export default function Header() {
                 </ul>
               </li>
 
-              {/* Second Root Menu */}
               <li>
                 <a href="#">{t("menu.company")}</a>
                 <ul className="sub-menu">
@@ -290,38 +279,13 @@ export default function Header() {
             </ul>
           </nav>
         </div>
-        {/* Header Button and Language Switcher */}
-        <div className="bringer-header-mp">
-          <nav className="bringer-nav">
-            <ul
-              className="main-menu"
-              data-stagger-appear="fade-down"
-              data-stagger-delay="75"
-            ></ul>
-          </nav>
-        </div>
-        {/* Header Button and Language Switcher */}
+
+        {/* Header Right Section */}
         <div className="bringer-header-rp">
           <div
             className="bringer-header-actions"
             style={{ display: "flex", alignItems: "center", gap: "15px" }}
           >
-            {/* Language Switcher Toggle */}
-
-            <div className="bringer-language-switch">
-              <label className="lang-switch">
-                <span className="lang-label">EN</span>
-                <input
-                  type="checkbox"
-                  checked={i18n.language === "hi"}
-                  onChange={toggleLanguage}
-                  aria-label="Toggle language switch"
-                />
-                <span className="slider"></span>
-                <span className="lang-label">हि</span>
-              </label>
-            </div>
-
             {/* CTA Button */}
             <a href="/contact" className="bringer-button">
               <b>{t("header.letsBuildTogether")}</b>
@@ -329,26 +293,12 @@ export default function Header() {
           </div>
         </div>
       </div>
+
       {/* Mobile Header */}
       <div className="bringer-mobile-header-inner">
         <a href="/" className="bringer-logo">
           <img src="/img/logo.png" alt="bringer." width="88" height="24" />
         </a>
-
-        {/* Mobile Language Switcher Toggle */}
-        <div className="bringer-mobile-language-switch">
-          <label className="lang-switch">
-            <span className="lang-label">EN</span>
-            <input
-              type="checkbox"
-              checked={i18n.language === "hi"}
-              onChange={toggleLanguage}
-              aria-label="Toggle language switch"
-            />
-            <span className="slider"></span>
-            <span className="lang-label">हि</span>
-          </label>
-        </div>
 
         <a href="#" className="bringer-mobile-menu-toggler">
           <i className="bringer-menu-toggler-icon">
