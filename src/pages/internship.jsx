@@ -53,7 +53,7 @@ export default function Internship() {
               >
                 Kickstart your career with real-world experience! Fill in the
                 details below to apply for our internship program.
-              </p>
+              </p> <br />
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function Internship() {
                   {formik.touched.name && formik.errors.name ? (
                     <div className="invalid-feedback">{formik.errors.name}</div>
                   ) : null}
-                </div>
+                </div> <br />
 
                 {/* Email */}
                 <div className="col-md-6">
@@ -118,7 +118,7 @@ export default function Internship() {
                       {formik.errors.email}
                     </div>
                   ) : null}
-                </div>
+                </div><br />
 
                 {/* College Name */}
                 <div className="col-md-6">
@@ -145,7 +145,7 @@ export default function Internship() {
                       {formik.errors.college}
                     </div>
                   ) : null}
-                </div>
+                </div><br />
 
                 {/* Completion Year */}
                 <div className="col-md-6">
@@ -170,7 +170,7 @@ export default function Internship() {
                   {formik.touched.year && formik.errors.year ? (
                     <div className="invalid-feedback">{formik.errors.year}</div>
                   ) : null}
-                </div>
+                </div><br />
 
                 {/* Course Name */}
                 <div className="col-md-6">
@@ -197,7 +197,7 @@ export default function Internship() {
                       {formik.errors.course}
                     </div>
                   ) : null}
-                </div>
+                </div><br />
 
                 {/* Resume Link */}
                 <div className="col-md-6">
@@ -224,7 +224,7 @@ export default function Internship() {
                       {formik.errors.resume}
                     </div>
                   ) : null}
-                </div>
+                </div><br />
 
                 {/* Skills */}
                 <div className="col-12">
@@ -251,7 +251,7 @@ export default function Internship() {
                       {formik.errors.skills}
                     </div>
                   ) : null}
-                </div>
+                </div><br />
 
                 {/* Submit Button */}
                 <div className="col-12 text-center ">
