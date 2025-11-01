@@ -20,7 +20,7 @@ export default function ContactAboutUsSection() {
   return (
     <section>
       {/* Section Title */}
-      <div className="stg-row stg-bottom-gap">
+      <div className="stg-row stg-bottom-gap mt-4">
         <div className="stg-col-8">
           <h2 data-split-appear="fade-up" data-unload="fade-up">
             {t("contact.aboutUsSection.title")}
