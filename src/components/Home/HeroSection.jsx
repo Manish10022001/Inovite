@@ -13,7 +13,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="backlight-bottom">
+    <section className="backlight-bottom mt-4">
       <div className="bringer-hero-block bringer-hero-type03">
         {/* Hero Title */}
         <div className="bringer-hero-title-wrap">
